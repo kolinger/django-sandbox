@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>Available pages</h2>
+    <ul>
+        {% for page in pages %}
+            <li>
+                <a href="{% url "pages.views.detail" page.slug %}" title="{{ page.name }}">{{ page.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

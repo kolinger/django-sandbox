@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" type="text/css" href="{% static "styles/main.css" %}" media="all"/>
+    <title>{{ title }}</title>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <div class="content">
+            <h1>Just some headline</h1>
+
+            <h2>yea and slogan too</h2>
+        </div>
+    </div>
+    <div id="content">
+        <div class="left">
+            <h2>Navigation</h2>
+            ...
+        </div>
+        <div class="right">
+            <h2>{{ title }}</h2>
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <div id="footer">
+        <p>Copyright (c) Tomáš Kolinger</p>
+    </div>
+</div>
+</body>
+</html>
