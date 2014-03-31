@@ -14,6 +14,9 @@ class Page(models.Model):
         self.slug = slugify(self.name)
         super(Page, self).save(*args, **kwargs)
 
+    class Meta:
+        ordering = ["name"]
+
 
 class PageForm(forms.ModelForm):
     def clean_name(self):
