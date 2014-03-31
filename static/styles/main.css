@@ -106,6 +106,19 @@ body {
 	border-left: 1px solid #eaadad;
 }
 
+#content .article h2 {
+    float: left;
+}
+
+#content .article small.date {
+    float: right;
+}
+
+#content .article .head {
+    width: 100%;
+    float: left;
+}
+
 #footer {
 	float: left;
 	background: url('../images/footer.png') no-repeat;

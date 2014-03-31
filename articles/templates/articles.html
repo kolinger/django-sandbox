@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% for article in articles %}
+        <div class="article">
+            <div class="head">
+                <h2>
+                    <a href="{% url "articles.views.detail" article.slug %}"
+                       title="{{ article.title }}">{{ article.title }}</a>
+                </h2>
+                <small class="date">{{ article.publish_date }}</small>
+            </div>
+
+            {{ article.content|safe }}
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="article">
+        <div class="head">
+            <h2>{{ article.title }}</h2>
+            <small class="date">{{ article.publish_date }}</small>
+        </div>
+
+        {{ article.content|safe }}
+    </div>
+{% endblock %}
