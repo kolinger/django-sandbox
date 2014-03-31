@@ -19,7 +19,11 @@
     <div id="content">
         <div class="left">
             <h2>Navigation</h2>
-            ...
+            <ul>
+                <li><a href="{% url "articles.views.default" %}">home</a></li>
+                <li><a href="{% url "pages.views.default" %}">pages</a></li>
+            </ul>
+
             <h2>Tags</h2>
             {% for tag in tags %}
                 {{ tag.name }}{% include "comma.html" %}
