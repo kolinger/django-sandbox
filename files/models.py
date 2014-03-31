@@ -1,7 +1,5 @@
 from django.contrib import admin
 from django.utils.datetime_safe import datetime
-from django.template.defaultfilters import slugify
-from os import path
 from django.db import models
 
 from core import admin as extended_admin
