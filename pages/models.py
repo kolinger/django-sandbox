@@ -32,7 +32,7 @@ class PageAdmin(admin.ModelAdmin):
 
     class Media:
         js = ("/static/ckeditor/ckeditor.js",)
-        css = {"all": ("/static/admin/main.css",)}
+        css = {"all": ("/static/admin.css",)}
 
 
 admin.site.register(Page, PageAdmin)
