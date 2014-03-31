@@ -8,7 +8,7 @@ class Page(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
-    content = models.TextField(null=True)
+    content = models.TextField(blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
