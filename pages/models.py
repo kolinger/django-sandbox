@@ -28,5 +28,11 @@ class PageAdmin(admin.ModelAdmin):
     list_display = ("name", "slug")
     form = PageForm
 
+    formfield_overrides = {models.TextField: {"widget": forms.Textarea(attrs={"class": "ckeditor"})}, }
+
+    class Media:
+        js = ("/static/ckeditor/ckeditor.js",)
+        css = {"all": ("/static/admin/main.css",)}
+
 
 admin.site.register(Page, PageAdmin)
