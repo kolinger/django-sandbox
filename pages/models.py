@@ -2,6 +2,7 @@ from django import forms
 from django.db import models
 from django.contrib import admin
 from django.template.defaultfilters import slugify
+from core import admin as extended_admin
 
 
 class Page(models.Model):
@@ -26,16 +27,10 @@ class PageForm(forms.ModelForm):
         return data
 
 
-class PageAdmin(admin.ModelAdmin):
+class PageAdmin(extended_admin.ModelAdmin):
     fields = ("name", "content")
     list_display = ("name", "slug")
     form = PageForm
-
-    formfield_overrides = {models.TextField: {"widget": forms.Textarea(attrs={"class": "ckeditor"})}, }
-
-    class Media:
-        js = ("/static/ckeditor/ckeditor.js",)
-        css = {"all": ("/static/admin.css",)}
 
 
 admin.site.register(Page, PageAdmin)
