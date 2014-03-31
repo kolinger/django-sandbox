@@ -10,7 +10,9 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 from django.conf import global_settings
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -38,9 +40,11 @@ INSTALLED_APPS = (
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_cleanup",
     "core",
     "pages",
     "articles",
+    "files",
 )
 
 MIDDLEWARE_CLASSES = (
@@ -73,27 +77,24 @@ DATABASES = {
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
-
 LANGUAGE_CODE = "en-us"
-
 TIME_ZONE = "UTC"
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
+# static files
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
-
 STATIC_URL = "/static/"
 
+# media files
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# templates
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     "core.context_processors.global_variables",
 )
