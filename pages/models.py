@@ -18,7 +18,7 @@ class Page(models.Model):
 class PageForm(forms.ModelForm):
     def clean_name(self):
         data = self.cleaned_data["name"]
-        if Page.objects.filter(slug=slugify(data)).exists():
+        if Page.objects.filter(slug=slugify(data)).exclude(pk=self.instance.id).exists():
             raise forms.ValidationError("This name is already used")
         return data
 
